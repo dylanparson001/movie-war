@@ -10,7 +10,7 @@ Website for tracking Movie War League
 ## Ranking System: 
     Scores are multiples of every hundred thousand the movie earns. 
     For example: 
-        If you rank the Mario Movie at #1, and it earns 500,000 at the box office, you will earn 50 points while if someone ranked
+        If you rank the Mario Movie at #1, and it earns 500,000 at the box office, you will earn 5 points while if someone ranked
         it as # 3 they would earn 30 points.
     
     1: 10x
