@@ -1,10 +1,9 @@
-
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-  <a class="navbar-brand" href="#">{{title}}</a>
-
-
   <div class="collapse navbar-collapse" id="navbarColor03">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item" href="#">
+        <a class="nav-link" style="font-weight: bold;">{{title}}</a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
@@ -17,25 +16,28 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Profile</a>
       </li>
+
+
     </ul>
   </div>
-    <form
-        #loginForm="ngForm"
+  <div class="nav-item me-3" *ngIf="(accountService.currentUser$ | async)">
+    <button class="btn btn-outline-success"(click)="logout()">Logout</button>
+  </div>
+  <form #loginForm="ngForm"
         class="d-flex me-3"
         autocomplete="off"
-      >
-        <input
-          class="form-control me-3"
-          name="username"
-          type="text"
-          placeholder="Username"
-        />
-        <input
-          name="password"
-          class="form-control me-3"
-          type="password"
-          placeholder="Password"
-        />
-        <button class="btn btn-outline-success" type="submit">Login</button>
-      </form>
+        (ngSubmit)="login()"
+        *ngIf="!(accountService.currentUser$ | async)">
+    <input class="form-control me-3"
+           name="username"
+           type="text"
+           placeholder="Username"
+           [(ngModel)]="model.username" />
+    <input name="password"
+           class="form-control me-3"
+           type="password"
+           placeholder="Password"
+           [(ngModel)]="model.password" />
+    <button class="btn btn-outline-success" type="submit">Login</button>
+  </form>
 </nav>

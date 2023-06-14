@@ -19,7 +19,7 @@ namespace api.Controllers
             _context = context;
             
         }
-
+        // api/accounts/login
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
@@ -48,6 +48,7 @@ namespace api.Controllers
             };
 
         }
+
         // POST: api/account/register
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
