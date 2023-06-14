@@ -1,0 +1,13 @@
+<div class="container" *ngIf="!(accountService.currentUser$ | async)">
+  <div>
+    <h1>Join the Movie War!</h1>
+    <app-register></app-register>
+  </div>
+</div>
+
+<div class="container" *ngIf="(accountService.currentUser$ | async)">
+  <div>
+    <h1>Welcome back</h1>
+
+  </div>
+</div>

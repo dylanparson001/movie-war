@@ -1,0 +1,24 @@
+<form
+  #loginForm="ngForm"
+  class="d-flex me-3"
+  autocomplete="off"
+  (ngSubmit)="register()"
+>
+  <div class="container form-group">
+    <input
+      class="form-control mt-3"
+      name="username"
+      type="text"
+      placeholder="Username"
+      [(ngModel)]="model.username"
+    />
+    <input
+      name="password"
+      class="form-control mt-3"
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="model.password"
+    />
+    <button class="btn btn-outline-success mt-3" type="submit">Register</button>
+  </div>
+</form>
